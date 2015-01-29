@@ -1,0 +1,69 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FourWalled.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <StackPanel x:Name="LayoutRoot" Background="Transparent">
+        <Border Height="60" VerticalAlignment="Top">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.3,0.9">
+                    <GradientStop Color="#FF4D5057" Offset="0"/>
+                    <GradientStop Color="#FF42444D" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Border VerticalAlignment="Center" CornerRadius="0,0,0,0" Background="#3BC14A" HorizontalAlignment="Left" Margin="0,0,12,0" >
+                    <TextBlock FontSize="50" Text="  f  " VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Assets/Fonts/Atelas.ttf#Atelas Personal Use Only"/>
+                </Border>
+                <TextBlock Text="four walled" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="80,0,0,0" FontSize="40" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight"/>
+              
+            </Grid>
+        </Border>
+
+
+        <StackPanel Margin="12">
+            <Grid>
+                <Image Source="/ApplicationIcon.png" Width="150" Height="150" HorizontalAlignment="Left"/>
+                <TextBlock Text="four walled" FontSize="40" Margin="180,0,0,0" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight"/>
+                <TextBlock Text="v 1.0.0.0" Foreground="Gray" FontSize="30" Margin="180,80,0,0" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight"/>
+            </Grid>
+            <TextBlock FontFamily="Segoe WP Light" TextWrapping="Wrap" Margin="0,12,0,0" >
+                <Run Text="• four walled is a 4walled.com client app for WP8"  FontSize="22"/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="• all images are fetched from 4walled.com"  FontSize="22"/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="What is 4walled? "/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="If you're aware of the 4chan or 7chan imageboards, then you would be aware they have wallpaper boards."/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="The problem with these boards is they are frequently clogged
+with people posting the same wallpapers over and over again,
+so this site downloads all the wallpapers posted on 4chan's /w/, /hr/, and /wg/ boards
+and 7chan's /wp/ board."/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="
+It then stores the image in a database ready for you to search.
+Some images have no searchable features
+(for example, the filename is '1251193196442.jpg')
+and so these images need tagging."/>
+            </TextBlock>
+        </StackPanel>
+    </StackPanel>
+
+</phone:PhoneApplicationPage>

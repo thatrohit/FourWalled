@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FourWalled.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerikCore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    telerikCore:InteractionEffectManager.IsInteractionEnabled="True"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <StackPanel x:Name="ContentPanel">
+            <Border Height="60" VerticalAlignment="Top">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.3,0.9">
+                        <GradientStop Color="#FF4D5057" Offset="0"/>
+                        <GradientStop Color="#FF42444D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Border VerticalAlignment="Center" CornerRadius="0,0,0,0" Background="#3BC14A" HorizontalAlignment="Left" Margin="0,0,12,0" >
+                        <TextBlock FontSize="50" Text="  f  " VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Assets/Fonts/Atelas.ttf#Atelas Personal Use Only"/>
+                    </Border>
+                    <TextBlock Text="four walled" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="80,0,0,0" FontSize="40" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight"/>
+                </Grid>
+            </Border>
+            <telerikInput:RadListPicker x:Name="lpContent" Header="select content to display" SelectionChanged="lpContent_SelectionChanged" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight">
+                <sys:String>unrated</sys:String>
+                <sys:String>safe for work</sys:String>
+                <sys:String>borderline</sys:String>
+                <sys:String>NSFW</sys:String>
+            </telerikInput:RadListPicker>
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

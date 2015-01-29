@@ -1,0 +1,147 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FourWalled.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:telerikCore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    telerikCore:InteractionEffectManager.IsInteractionEnabled="True"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    shell:SystemTray.IsVisible="False">
+
+    <!--<StackPanel x:Name="LayoutRoot" Background="Transparent">
+        
+        <Border Background="#4D5057" Height="120" VerticalAlignment="Top">
+            <TextBlock Text="Four walled" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,12,0" FontSize="60" FontFamily="/Assets/Fonts/Atelas.ttf#Atelas Personal Use Only"/>
+        </Border>
+        <Grid VerticalAlignment="Top" Margin="0,0,0,0">
+            <telerikPrimitives:RadDataBoundListBox x:Name="lbThumbs" Height="280" ItemTap="lbThumbs_ItemTap">
+                <telerikPrimitives:RadDataBoundListBox.EmptyContentTemplate>
+                    <DataTemplate>
+                        <StackPanel VerticalAlignment="Center" Opacity=".5">
+                            <Image Height="150" Width="150" Source="/Assets/Images/sad.png"/>
+                            <TextBlock Text="nothing here yet" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </telerikPrimitives:RadDataBoundListBox.EmptyContentTemplate>
+                <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                    <telerikPrimitives:StackVirtualizationStrategyDefinition Orientation="Horizontal"/>
+                </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Image Stretch="UniformToFill" Height="280" Width="400" Source="{Binding ThumbnailWall}" VerticalAlignment="Top"/>
+                    </DataTemplate>
+                </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+            </telerikPrimitives:RadDataBoundListBox>
+        </Grid>
+        <Grid VerticalAlignment="Bottom" Height="520">
+            <ScrollViewer Height="400" VerticalAlignment="Top">
+                <StackPanel>
+                    <Border Height="100" Background="#4D5057" Padding="12" >
+                        <Grid Tap="GoToPhotoGridPage">
+                            <Image Height="92" Width="92" VerticalAlignment="Center" Source="/Assets/Images/search.png" HorizontalAlignment="Left"/>
+                            <TextBlock Text="search" FontFamily="segoe wp light" FontSize="40" VerticalAlignment="Center" Margin="120,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <Border Height="100" Background="#4E6E5D" Padding="12" >
+                        <Grid >
+                            <Image Height="92" Width="92" VerticalAlignment="Center" Source="/Assets/Images/setting.png" HorizontalAlignment="Left"/>
+                            <TextBlock Text="settings" FontFamily="segoe wp light" FontSize="40" VerticalAlignment="Center" Margin="120,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <Border Height="100" Background="#4DA167" Padding="12" >
+                        <Grid >
+                            <Image Height="92" Width="92" VerticalAlignment="Center" Source="/Assets/Images/about.png" HorizontalAlignment="Left"/>
+                            <TextBlock Text="about" FontFamily="segoe wp light" FontSize="40" VerticalAlignment="Center" Margin="120,0,0,0"/>
+                        </Grid>
+                    </Border>
+                    <Border Height="100" Background="#3BC14A" Padding="12" >
+                        <Grid >
+                            <Image Height="92" Width="92" VerticalAlignment="Center" Source="/Assets/Images/logout.png" HorizontalAlignment="Left"/>
+                            <TextBlock Text="go to 4walled.com" FontFamily="segoe wp light" FontSize="40" VerticalAlignment="Center" Margin="120,0,0,0"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+            
+        </Grid>
+    </StackPanel >-->
+
+    <Grid x:Name="LayoutRoot">
+        <StackPanel x:Name="ContentPanel">
+            <Border Height="60" VerticalAlignment="Top">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.3,0.9">
+                        <GradientStop Color="#FF4D5057" Offset="0"/>
+                        <GradientStop Color="#FF42444D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Border VerticalAlignment="Center" CornerRadius="0,0,0,0" Background="#3BC14A" HorizontalAlignment="Left" Margin="0,0,12,0" >
+                        <TextBlock FontSize="50" Text="  f  " VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Assets/Fonts/Atelas.ttf#Atelas Personal Use Only"/>
+                    </Border>
+                    <TextBlock Text="four walled" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="80,0,0,0" FontSize="40" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight"/>
+                </Grid>
+            </Border>
+
+            <telerikPrimitives:RadDataBoundListBox x:Name="lbThumbs" Height="540" ItemTap="lbThumbs_ItemTap">
+                <telerikPrimitives:RadDataBoundListBox.ItemAddedAnimation>
+                    <telerikCore:RadMoveAnimation StartPoint="500, 0" EndPoint="0, 0" Duration="0:0:1">
+                        <telerikCore:RadMoveAnimation.Easing>
+                            <CubicEase EasingMode="EaseOut"/>
+                        </telerikCore:RadMoveAnimation.Easing>
+                    </telerikCore:RadMoveAnimation>
+                </telerikPrimitives:RadDataBoundListBox.ItemAddedAnimation>
+                <telerikPrimitives:RadDataBoundListBox.EmptyContentTemplate>
+                    <DataTemplate>
+                        <StackPanel VerticalAlignment="Center" Opacity=".5">
+                            <Image Height="150" Width="150" Source="/Assets/Images/sad.png"/>
+                            <TextBlock Text="nothing here yet" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </telerikPrimitives:RadDataBoundListBox.EmptyContentTemplate>
+                <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                    <telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Vertical" WrapLineAlignment="Center"/>
+                </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Image Stretch="UniformToFill" Height="180" Width="240" Source="{Binding ThumbnailWall}" VerticalAlignment="Top"/>
+                    </DataTemplate>
+                </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+            </telerikPrimitives:RadDataBoundListBox>
+            <StackPanel>
+                <Border Height="67" Background="#4D5057" Padding="8" >
+                    <Grid Tap="GoToPhotoGridPage">
+                        <Border>
+                            <Image Height="60" Width="60" VerticalAlignment="Center" Source="/Assets/Images/search.png" HorizontalAlignment="Left"/>
+                        </Border>
+                        <TextBlock Text="search" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight" FontSize="30" VerticalAlignment="Center" Margin="80,0,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="67" Background="#4E6E5D" Padding="8" >
+                    <Grid Tap="GoToSettings">
+                        <Image Height="60" Width="60" VerticalAlignment="Center" Source="/Assets/Images/setting.png" HorizontalAlignment="Left"/>
+                        <TextBlock Text="settings" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight" FontSize="30" VerticalAlignment="Center" Margin="80,0,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Height="67" Background="#4DA167" Padding="8" >
+                    <Grid Tap="GoToAbout">
+                        <Image Height="60" Width="60" VerticalAlignment="Center" Source="/Assets/Images/about.png" HorizontalAlignment="Left"/>
+                        <TextBlock Text="about" FontFamily="/Assets/Fonts/SourceSansPro-ExtraLight.ttf#Source Sans Pro ExtraLight" FontSize="30" VerticalAlignment="Center" Margin="80,0,0,0"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
